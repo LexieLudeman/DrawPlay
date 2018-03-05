@@ -25,6 +25,12 @@ public class Cat {
 	private static final int NUM_WHISKERS = 3;
 	// ears are about 1/5 the size of the head
 	private static final int EAR_SIZE = HEAD_DIMENSION/5;
+	// hat is above 
+	private static final int HAT_XB = -45;
+	private static final int HAT_YB = -20;
+	private static final int HAT_XT = -40;
+	private static final int HAT_YT = -55;
+	
 	
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
@@ -97,5 +103,10 @@ public class Cat {
 		// Draw right side of right ear
 		x = x2 + EAR_SIZE/2;
 		g2.drawLine(x2, y2, x, y);		
+		
+		// Add hat
+		g2.setColor(Color.MAGENTA);
+		g2.fillRect(x+HAT_XB, y+HAT_YB, 30, 5);
+		g2.fillRect(x+ HAT_XT, y+HAT_YT, 20, 35);
 	}
 }
